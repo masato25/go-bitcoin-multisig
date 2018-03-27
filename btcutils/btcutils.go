@@ -109,8 +109,8 @@ func Hash160(data []byte) ([]byte, error) {
 // NewMOfNRedeemScript creates a M-of-N Multisig redeem script given m, n and n public keys
 func NewMOfNRedeemScript(m int, n int, publicKeys [][]byte) ([]byte, error) {
 	//Check we have valid numbers for M and N
-	if n < 1 || n > 7 {
-		return nil, errors.New("N must be between 1 and 7 (inclusive) for valid, standard P2SH multisig transaction as per Bitcoin protocol.")
+	if n < 1 || n > 15 {
+		return nil, errors.New("N must be between 1 and 15 (inclusive) for valid, standard P2SH multisig transaction as per Bitcoin protocol.")
 	}
 	if m < 1 || m > n {
 		return nil, errors.New("M must be between 1 and N (inclusive).")
